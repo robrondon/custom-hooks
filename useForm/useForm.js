@@ -7,6 +7,7 @@ export const useForm = (initialForm = {}, formValidations = {}) => {
   const [touchedFields, setTouchedFields] = useState({});
 
   const validateForm = useCallback(() => {
+    if (!formValidations || Object.keys(formValidations).length === 0) return;
     const errors = {}
     let valid = true
 
